@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mukul Agarwal | Portfolio</title>
   <style>
     * {
@@ -18,10 +17,11 @@
       line-height: 1.6;
     }
     header {
-      background-color: #2c3e50;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
       color: white;
       padding: 40px 0;
       text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
     }
     nav {
       display: flex;
@@ -34,14 +34,16 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: #1abc9c;
     }
     .container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
+      animation: slideIn 1.5s ease-in-out;
     }
     .section {
       margin-bottom: 40px;
@@ -59,6 +61,10 @@
       background-color: #ecf0f1;
       padding: 8px 12px;
       border-radius: 6px;
+      transition: transform 0.2s;
+    }
+    .tool:hover {
+      transform: scale(1.1);
     }
     footer {
       text-align: center;
@@ -67,12 +73,29 @@
       color: white;
       margin-top: 40px;
     }
+    #visitor-counter {
+      font-size: 0.9em;
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Hi 👋, I'm Mukul Agarwal</h1>
     <p>Deep Learning & Machine Learning Researcher</p>
+    <div id="visitor-counter">Loading visitor count...</div>
   </header>
 
   <nav>
